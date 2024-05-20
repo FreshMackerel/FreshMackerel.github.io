@@ -3,69 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MangaShelf</title>
-    <link rel="stylesheet" type="text/css" href="styles.css">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f0f0f0;
-            text-align: center;
-            margin: 20px;
-        }
-        h1 {
-            font-size: 50px;
-            color: #333;
-        }
-        .container {
-            max-width: 600px;
-            margin: 0 auto;
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-        }
-        .manga-title {
-            font-size: 24px;
-            margin-bottom: 10px;
-        }
-        .manga-cover {
-            max-width: 300px; /* Adjust the width as needed */
-            height: auto;
-            margin-top: 10px;
-        }
-        input {
-            padding: 10px;
-            width: 80%;
-            max-width: 300px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            margin-top: 10px;
-            box-sizing: border-box;
-        }
-    </style>
+    <title>Love Notes And Lockers | ラブノートとロッカー</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
-        <h1>MangaShelf</h1>
-        <h3>Manga reading made easy</h3>
-        <input type="text" placeholder="Search manga...">
-        <br><br>
-        <div class="manga-title"> 
-            <b><a href="HIMITSU NO AIPRI FULL COLOR OSARAI 4-KOMA/HIMITSU NO AIPRI FULL COLOR OSARAI 4-KOMA.html">Himtsu no Aipri full color Osarai 4-Koma</a></b>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="archive.html">Archive</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="latest-comic">
+            <h2>Latest Comic</h2>
+            <img src="latest-comic.jpg" alt="Latest Comic">
+            <p><a href="latest-comic.html">Read Now</a></p>
+        </section>
+
+        <section class="featured-comics">
+            <h2>Featured Comics</h2>
+            <div class="comic-item">
+                <img src="comic1.jpg" alt="Comic 1">
+                <p class="title">Comic Title 1</p>
+                <p><a href="comic1.html">Read Now</a></p>
+            </div>
+            <div class="comic-item">
+                <img src="comic2.jpg" alt="Comic 2">
+                <p class="title">Comic Title 2</p>
+                <p><a href="comic2.html">Read Now</a></p>
+            </div>
+            <!-- Add more featured comics as needed -->
+        </section>
+    </main>
+
+    <script>
+    function searchComics() {
+        let input = document.getElementById('searchInput').value.toLowerCase();
+        let comicItems = document.getElementsByClassName('comic-item');
+        
+        for (let i = 0; i < comicItems.length; i++) {
+            let item = comicItems[i];
+            let title = item.getElementsByClassName('title')[0].innerText.toLowerCase();
+            if (title.includes(input)) {
+                item.style.display = '';
+            } else {
+                item.style.display = 'none';
+            }
+        }
+    }
+</script>
+
+    <footer>
+        <p>&copy; 2024 Your Name. All rights reserved.</p>
+        <div class="social-media">
+            <a href="https://twitter.com/yourprofile">Twitter</a>
+            <a href="https://instagram.com/yourprofile">Instagram</a>
+            <!-- Add more social media links as needed -->
         </div>
-        <br>
-        <img class="manga-cover" src="HIMITSU NO AIPRI FULL COLOR OSARAI 4-KOMA/cover.jpg" alt="HIMITSU NO AIPRI FULL COLOR OSARAI 4-KOMA Cover">
-
-
-
-    <div class="manga-title">
-            <b><a href="Mizuki-Senpai No Koi Uranai/Mizuki-Senpai No Koi Uranai.html">Himtsu no Aipri full color Osarai 4-Koma</a></b>
-        </div>
-        <br>
-        <img class="manga-cover" src="Mizuki-Senpai No Koi Uranai/cover.jpg" alt="Mizuki-Senpai No Koi Uranai">
-    </div>
-
-
-    </div>
+    </footer>
 </body>
 </html>
